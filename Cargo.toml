@@ -1,16 +1,15 @@
 [package]
-name = "lcd1602-rs"
+name = "lcd1602-async-rs"
 version = "0.1.0"
-authors = ["Levi Lovelock <lovelock.levi@gmail.com>"]
-edition = "2018"
-keywords =["no-std", "driver", "embedded-hal", "hd44780", "teensy"]
+authors = ["Petru-Cristian Nania <naniacristian26@gmail.com>"]
+edition = "2024"
+keywords =["no-std", "driver", "hd44780"]
 categories = ["embedded", "hardware-support", "no-std"]
-description = "A crate to drive a 1602 LCD via an embedded-hal implementation"
+description = "A crate to asynchronously drive a 1602 LCD"
 license = "MIT"
-repository = "https://github.com/levpaul/lcd1602-rs"
+repository = "https://github.com/PetruCristian/lcd1602-async-rs"
 readme = "README.md"
 
 [dependencies]
-embedded-hal = "0.2.5"
-nb = "1.0.0"
-
+embassy-rp = { version = "0.3.0", git = "https://github.com/embassy-rs/embassy", rev = "2e7a2b6", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp235xa", "binary-info"] }
+embassy-time = { version = "0.4.0", git = "https://github.com/embassy-rs/embassy", rev = "2e7a2b6", features = ["defmt", "defmt-timestamp-uptime"] }
